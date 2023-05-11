@@ -12,17 +12,6 @@
       </p>
 
       <button onclick="
-        const num = Math.random();
-
-        let comp = '';
-
-        if (num >= 0 && num < 1 / 3) {
-          comp = 'rock';
-        } else if (num >= 1 / 3 && num < 2 / 3) {
-          comp = 'paper';
-        } else if (num >= 2 / 3 && num < 1) {
-          comp = 'scissors'
-        }
 
         let result = '';
 
@@ -38,17 +27,6 @@
       ">Rock</button>
 
       <button onclick="
-        num = Math.random();
-
-        comp = '';
-
-        if (num >= 0 && num < 1 / 3) {
-          comp = 'rock';
-        } else if (num >= 1 / 3 && num < 2 / 3) {
-          comp = 'paper';
-        } else if (num >= 2 / 3 && num < 1) {
-          comp = 'scissors'
-        }
 
         result = '';
 
@@ -64,17 +42,7 @@
       ">Paper</button>
 
       <button onclick="
-        num = Math.random();
-
-        comp = '';
-
-        if (num >= 0 && num < 1 / 3) {
-          comp = 'rock';
-        } else if (num >= 1 / 3 && num < 2 / 3) {
-          comp = 'paper';
-        } else if (num >= 2 / 3 && num < 1) {
-          comp = 'scissors'
-        }
+        pickCompMove ();
 
         result = '';
 
@@ -91,4 +59,23 @@
   
      
   </body>
+
+  <script>
+
+    
+    function pickCompMove() {
+      num = Math.random();
+
+      comp = '';
+
+      if (num >= 0 && num < 1 / 3) {
+        comp = 'rock';
+      } else if (num >= 1 / 3 && num < 2 / 3) {
+        comp = 'paper';
+      } else if (num >= 2 / 3 && num < 1) {
+        comp = 'scissors'
+      }
+    }
+
+  </script>
 </html>
