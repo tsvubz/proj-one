@@ -26,6 +26,11 @@
   </body>
 
   <script>
+    const score = {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    };
 
     function playGame(playerMove) {
       const comp = pickCompMove();
@@ -42,7 +47,7 @@
         }else if(playerMove === 'paper') {
           const comp = pickCompMove();
 
-          let result = '';
+          result = '';
 
           if (comp === 'rock') {
             result = 'You win.';
@@ -55,7 +60,7 @@
         }else if(playerMove === 'rock'){
           const comp = pickCompMove();
 
-          let result = '';
+          result = '';
 
           if (comp === 'rock') {
             result = 'Tie.';
@@ -66,7 +71,16 @@
           }
         }
         
-        alert(`You picked ${playerMove}. Computer picked ${comp}. ${result} `);
+        if (result === 'You win.') {
+          score.wins += 1;
+        }else if (result === 'You lose.') {
+          score.losses += 1;
+        }else if (result === 'Tie.') {
+          score.ties += 1;
+        }
+
+        alert(`You picked ${playerMove}. Computer picked ${comp}. ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     } 
     function pickCompMove() {
       const num = Math.random();
@@ -79,7 +93,8 @@
         comp = 'paper';
       } else if (num >= 2 / 3 && num < 1) {
         comp = 'scissors'
-      }return pickCompMove();
+      }
+    return comp;
       
     } 
 
